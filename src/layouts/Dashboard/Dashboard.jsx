@@ -106,9 +106,15 @@ class Dashboard extends Component {
     return (
       <div className="wrapper">
         <NotificationSystem ref="notificationSystem" style={style} />
+
+        {/* Sidebar 부분 */}
         <Sidebar {...this.props} />
         <div id="main-panel" className="main-panel" ref="mainPanel">
+          
+          {/* Header 부분 */}
           <Header {...this.props} />
+
+          {/* main page 부분 */}
           <Switch>
             {dashboardRoutes.map((prop, key) => {
               if (prop.name === "Notifications")
@@ -131,6 +137,8 @@ class Dashboard extends Component {
               );
             })}
           </Switch>
+
+          {/* footer 부분 */}
           <Footer />
         </div>
       </div>
